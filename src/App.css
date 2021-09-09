@@ -20,45 +20,6 @@ main {
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
 
-.product {
-  display: flex;
-  margin: 30px;
-}
-
-.product-info {
-  padding: 10px 20px;
-}
-
-.product-info h3,
-p {
-  margin: 0;
-}
-
-.product-img {
-  height: 150px;
-  width: 150px;
-  border: solid 1px rgba(0, 0, 0, 0.2);
-  display: flex;
-}
-
-img {
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
-}
-
-.price {
-  font-size: 16px;
-  font-weight: 500;
-  color: #888;
-}
-
-.selling-price {
-  font-size: 20px;
-  font-weight: 600;
-  color: black;
-}
-
 .total {
   display: flex;
   justify-content: space-between;
@@ -78,7 +39,7 @@ img {
   padding: 10px 20px;
   border-radius: 25px;
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 .result {

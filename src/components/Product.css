@@ -1,0 +1,38 @@
+.product {
+  display: flex;
+  margin: 30px;
+}
+
+.product__img {
+  height: 150px;
+  width: 150px;
+  border: solid 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.product__info {
+  padding: 10px 20px;
+}
+
+.product__info h3,
+p {
+  margin: 0;
+}
+
+img {
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.product__price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #888;
+}
+
+.product__selling-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
