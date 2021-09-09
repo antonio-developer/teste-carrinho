@@ -66,3 +66,7 @@ main {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.btn button:hover {
+  background-color: rgba(0, 0, 255, 0.8);
+}
