@@ -25,13 +25,13 @@ function App() {
         </header>
 
         <main>
-          {products.map(item => (
-            <div key={item.uniqueId}>
+          {products.map(product => (
+            <div key={product.uniqueId}>
               <Product
-                image={item.imageUrl}
-                name={item.name}
-                price={item.price}
-                sellingPrice={item.sellingPrice}
+                image={product.imageUrl}
+                name={product.name}
+                price={product.price}
+                sellingPrice={product.sellingPrice}
               />
             </div>
           ))}
