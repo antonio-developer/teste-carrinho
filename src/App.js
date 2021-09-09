@@ -1,15 +1,20 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import acima10Reais from './services/acima-10-reais.json';
 import abaixo10Reais from './services/abaixo-10-reais.json';
 import Product from './components/Product';
 
 function App() {
-  const { items } = abaixo10Reais;
-  console.log(items[0].name);
+  const [products, setProducts] = useState([]);
 
-  var total = items.reduce(getTotal, 0);
-  function getTotal(total, item) {
-    return total + item.price + item.sellingPrice;
+  useEffect(() => {
+    const { items } = abaixo10Reais;
+    setProducts(items);
+  }, []);
+
+  var total = products.reduce(getTotal, 0);
+  function getTotal(total, product) {
+    return total + product.price + product.sellingPrice;
   }
 
   return (
@@ -20,7 +25,7 @@ function App() {
         </header>
 
         <main>
-          {items.map(item => (
+          {products.map(item => (
             <div key={item.uniqueId}>
               <Product
                 image={item.imageUrl}
@@ -36,7 +41,10 @@ function App() {
           <div className="total">
             <span className="result">Total</span>
             <span className="result">
-              R$ {(total / 100).toString().replace(/\./, ',')}
+              R${' '}
+              {parseFloat(total / 100)
+                .toFixed(2)
+                .replace('.', ',')}
             </span>
           </div>
           {total < 1000 ? null : (
