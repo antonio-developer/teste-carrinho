@@ -19,44 +19,44 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <header>
-          <h1>Meu carrinho</h1>
-        </header>
+      <header>
+        <h1>Meu carrinho</h1>
+      </header>
 
-        <main>
-          {products.map(product => (
-            <div key={product.uniqueId}>
-              <Product
-                image={product.imageUrl}
-                name={product.name}
-                price={product.price}
-                sellingPrice={product.sellingPrice}
-              />
-            </div>
-          ))}
-        </main>
+      <main>
+        {products.map(product => (
+          <div key={product.uniqueId}>
+            <Product
+              image={product.imageUrl}
+              name={product.name}
+              price={product.price}
+              sellingPrice={product.sellingPrice}
+            />
+          </div>
+        ))}
+      </main>
 
-        <footer>
-          <div className="total">
-            <span className="result">Total</span>
-            <span className="result">
-              R${' '}
-              {parseFloat(total / 100)
-                .toFixed(2)
-                .replace('.', ',')}
-            </span>
+      <footer>
+        <div className="total">
+          <span className="result">Total</span>
+          <span className="result">
+            R${' '}
+            {parseFloat(total / 100)
+              .toFixed(2)
+              .replace('.', ',')}
+          </span>
+        </div>
+
+        {total < 1000 ? null : (
+          <div className="msg">
+            <span>Parabéns, sua compra tem frete grátis!</span>
           </div>
-          {total < 1000 ? null : (
-            <div className="msg">
-              <span>Parabéns, sua compra tem frete grátis!</span>
-            </div>
-          )}
-          <div className="btn">
-            <button type="submit">Finalizar compra</button>
-          </div>
-        </footer>
-      </div>
+        )}
+
+        <div className="btn">
+          <button type="submit">Finalizar compra</button>
+        </div>
+      </footer>
     </div>
   );
 }
